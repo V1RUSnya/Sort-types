@@ -9,7 +9,3 @@ class Solution():
                     l1[i] = temp
             a+=1
             print(l1)
-
-sol = Solution()
-input = [16363,3,64124,3,6,8,21,1]
-sol.bubble(input)
