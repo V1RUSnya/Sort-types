@@ -23,6 +23,7 @@ inputs = input_arr_randomize()
 print(f"{formats}\nМассив: {inputs}\n{formats}\nКаким методом сортировать?\n0) Выход\n1) Пузырьком\n2) Сортировка выбором")
 while True:
     select = int(input())
+    # select = 2 # Debug
     start_time = time.time()
     if select == 0:
         break
