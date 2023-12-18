@@ -11,8 +11,8 @@ def test(arr):
 def input_arr_randomize():
     arr = []
     random.seed()
-    for i in range (10): # Кол-во элементов
-        arr.append(random.randint(1,100)) #Диапозон
+    for i in range (10**3): # Кол-во элементов
+        arr.append(random.randint(1,1000)) #Диапозон
     return arr
 
 sol = metod.Solution()
@@ -20,7 +20,7 @@ formats = "-"*100
 inputs = input_arr_randomize()
 
 debug_select = None # Дебаг
-print(f"{formats}\nМассив: {inputs}\n{formats}\nКаким методом сортировать?\n0) Выход\n1) Пузырьком\n2) Сортировка выбором")
+print(f"{formats}\nМассив: {inputs}\n{formats}\nКаким методом сортировать?\n0) Выход\n1) Пузырьком\n2) Сортировка выбором\n3) Сортировка вставками")
 while True:
     if debug_select == None:
         select = int(input())
@@ -33,6 +33,8 @@ while True:
         result = sol.bubble(inputs)
     elif select == 2:
         result = sol.selection(inputs)
+    elif select == 3:
+        result = sol.insertion(inputs)
 
     end_time = time.time()
     execution_time = end_time - start_time # Время
