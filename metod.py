@@ -1,29 +1,25 @@
 class Solution():
     def bubble(self, arr: list) -> list:
-        a = 0
-        while a < len(arr):
-            for i in range(len(arr)-1-a):
+        for j in range (len(arr)-1):
+            for i in range(len(arr)-1-j):
                 if arr[i] > arr[i+1]:
                     temp = arr[i+1]
                     arr[i+1] = arr[i]
                     arr[i] = temp
-            a += 1
         return arr
     
-    def selection(self, arr: list) -> list:
-        a = 0
-        while a <= len(arr)-1:
-            min = a
-            for i in range(1+a, len(arr)):
+    def selection(self, arr: list) -> list: ## Выбором (Меньше сравнений в сравнении с вставками)
+        for j in range (len(arr)-1):
+            min = j
+            for i in range(1+j, len(arr)):
                 if arr[i] < arr[min]:
                     min = i
-            temp = arr[a]
-            arr[a] = arr[min]
+            temp = arr[j]
+            arr[j] = arr[min]
             arr[min] = temp
-            a += 1
         return arr
     
-    def insertion(self, arr: list) -> list:
+    def insertion(self, arr: list) -> list: ## Вставками (Меньше перестановок в сравнении с выбором)
         for i in range (1,len(arr)):
             sort = i-1
             while sort > -1 and arr[sort] > arr[sort + 1]:
