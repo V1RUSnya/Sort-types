@@ -8,4 +8,4 @@ class Solution():
                     l1[i+1] = l1[i]
                     l1[i] = temp
             a+=1
-            print(l1)
+        return l1
