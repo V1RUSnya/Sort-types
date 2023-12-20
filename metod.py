@@ -1,5 +1,5 @@
 class Solution():
-    def bubble(self, arr: list) -> list:
+    def bubble(self, arr: list) -> list: # Сортировка пузьрьком
         for j in range (len(arr)-1):
             for i in range(len(arr)-1-j):
                 if arr[i] > arr[i+1]:

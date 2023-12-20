@@ -22,19 +22,26 @@ inputs = input_arr_randomize()
 debug_select = None # Дебаг
 print(f"{formats}\nМассив: {inputs}\n{formats}\nКаким методом сортировать?\n0) Выход\n1) Пузырьком\n2) Сортировка выбором\n3) Сортировка вставками")
 while True:
+
     if debug_select == None:
         select = int(input())
     else:
         select = debug_select
-    start_time = time.time()
-    if select == 0:
-        break
-    elif select == 1:
-        result = sol.bubble(inputs)
-    elif select == 2:
-        result = sol.selection(inputs)
-    elif select == 3:
-        result = sol.insertion(inputs)
+
+    start_time = time.time() # Секундомер
+
+    match select:
+        case 0:
+            break
+        case 1:
+            result = sol.bubble(inputs)
+        case 2:
+            result = sol.selection(inputs)
+        case 3:
+            result = sol.insertion(inputs)
+        case _:
+            print("Invalid input!")
+            break
 
     end_time = time.time()
     execution_time = end_time - start_time # Время
